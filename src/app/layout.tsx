@@ -9,7 +9,7 @@ import { type Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 
 export const metadata: Metadata = {
-  title: "Computer Assemble",
+  title: "PC Beaver",
   description: "Best Spot for Products",
   icons: [
     { rel: "icon", url: "/favicon.ico" },

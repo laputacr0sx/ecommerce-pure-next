@@ -209,22 +209,22 @@ export default function Example() {
             {/* </div> */}
 
             {/* Secondary navigation */}
-            <div className="bg-white bg-opacity-10 backdrop-blur-md backdrop-filter">
+            <div className="bg-white bg-opacity-10 backdrop-blur-sm backdrop-filter">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div>
                   <div className="flex h-16 items-center justify-between">
                     {/* Logo (lg+) */}
                     <div className="hidden lg:flex lg:flex-1 lg:items-center">
-                      <a href="#">
-                        <span className="sr-only">Computer Assembler</span>
+                      <Link href="/">
+                        <span className="sr-only">PC Beaver</span>
                         <Image
-                          width={48}
-                          height={48}
+                          width={500}
+                          height={500}
                           alt=""
-                          src="/Project-ICON.png"
+                          src="/PC-Beaver.webp"
                           className="h-8 w-auto"
                         />
-                      </a>
+                      </Link>
                     </div>
 
                     <div className="hidden h-full lg:flex">
@@ -311,7 +311,7 @@ export default function Example() {
                         height={200}
                         width={200}
                         alt=""
-                        src="/Project-ICON.png"
+                        src="/PC-Beaver.webp"
                         className="h-8 w-auto"
                       />
                     </a>
@@ -442,8 +442,8 @@ export default function Example() {
                     >
                       <span aria-hidden="true" className="absolute inset-0">
                         <Image
-                          width={218}
-                          height={320}
+                          width={300}
+                          height={500}
                           alt={category.name}
                           src={category.imageSrc}
                           className="h-full w-full object-cover object-center"
