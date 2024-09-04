@@ -1,6 +1,5 @@
 "use client";
 
-import { useAuthState } from "react-firebase-hooks/auth";
 import { navigation } from "@/constants/navigations";
 import {
   Dialog,
@@ -26,7 +25,6 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment, useState } from "react";
-import { auth } from "../../firebaseConfig";
 
 const categories = [
   {
@@ -64,22 +62,13 @@ const footerNavigation = {
   company: [{ name: "Who am I", href: "#" }],
   account: [{ name: "Manage Account", href: "#" }],
   connect: [
-    { name: "Contact Us", href: "#" },
-    { name: "Facebook", href: "#" },
-    { name: "Instagram", href: "#" },
-    { name: "Pinterest", href: "#" },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/vvfelix" },
+    { name: "Github", href: "https://www.github.com/laputacr0sx" },
   ],
 };
 
 export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [user, loading, error] = useAuthState(auth);
-
-  console.log(user);
-
-  if (loading) return <div>Loading...</div>;
-
-  if (error) return <div>Error: {error.message}</div>;
 
   return (
     <div className="bg-white">
@@ -554,48 +543,17 @@ export default function HomePage() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-sm font-medium text-white">Company</h3>
-                  <ul role="list" className="mt-6 space-y-6">
-                    {footerNavigation.company.map((item) => (
-                      <li key={item.name} className="text-sm">
-                        <a
-                          href={item.href}
-                          className="text-gray-300 hover:text-white"
-                        >
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <div className="space-y-12 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
-                <div>
-                  <h3 className="text-sm font-medium text-white">Account</h3>
-                  <ul role="list" className="mt-6 space-y-6">
-                    {footerNavigation.account.map((item) => (
-                      <li key={item.name} className="text-sm">
-                        <a
-                          href={item.href}
-                          className="text-gray-300 hover:text-white"
-                        >
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
                   <h3 className="text-sm font-medium text-white">Connect</h3>
                   <ul role="list" className="mt-6 space-y-6">
                     {footerNavigation.connect.map((item) => (
                       <li key={item.name} className="text-sm">
-                        <a
+                        <Link
                           href={item.href}
                           className="text-gray-300 hover:text-white"
+                          target="_blank"
                         >
                           {item.name}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
