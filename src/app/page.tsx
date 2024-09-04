@@ -1,5 +1,6 @@
 "use client";
 
+import { useAuthState } from "react-firebase-hooks/auth";
 import { navigation } from "@/constants/navigations";
 import {
   Dialog,
@@ -25,6 +26,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment, useState } from "react";
+import { auth } from "../../firebaseConfig";
 
 const categories = [
   {
@@ -69,8 +71,15 @@ const footerNavigation = {
   ],
 };
 
-export default function Example() {
+export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [user, loading, error] = useAuthState(auth);
+
+  console.log(user);
+
+  if (loading) return <div>Loading...</div>;
+
+  if (error) return <div>Error: {error.message}</div>;
 
   return (
     <div className="bg-white">
